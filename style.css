@@ -84,6 +84,13 @@ footer {
   border-radius: 0.6em;
 }
 
+.getNewBook {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .shelf{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

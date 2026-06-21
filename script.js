@@ -31,7 +31,6 @@ const book6 = new Book("Ultimate Guide to Web Design", "Adrian Kuleszo", "web de
 
 
 library.push(book1, book2, book3, book4, book5, book6);
-console.log(library)
 
 
 
@@ -92,31 +91,32 @@ function addBookInfo(){
 
 addBookInfo();
 
-function addBookToLibrary(){
 
-   
+const newBook = document.querySelector('.getNewBook')
+
+function addBookToLibrary(){
+   const inputBook = new Book(
+    this.name = function(){
+        return prompt("new book alert?")
+    }
+   )
     
+    library.push(inputBook)
     
    
 
 }
-addBookToLibrary();
+
+
+const addNewBook = document.querySelector('.newBook');
+addNewBook.addEventListener('click', () => {
+    bookForm();
+    addBookToLibrary();
+
+})
 /* 
 
-unction populatePokeCard(pokemon) {
-    let pokeScene = document.createElement('div')
-    pokeScene.className = 'scene'
-    let pokeCard = document.createElement('div')
-    pokeCard.className = 'card'
-    pokeCard.addEventListener('click', function () {
-        pokeCard.classList.toggle('is-flipped')
-    })
 
-    pokeCard.appendChild(populateCardFront(pokemon))
-    pokeCard.appendChild(populateCardBack(pokemon))
-    pokeScene.appendChild(pokeCard)
-    pokemonGrid.appendChild(pokeScene)
-}
 
 function populateCardFront(pokemon) {
     let cardFront = document.createElement('div')

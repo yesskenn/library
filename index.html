@@ -19,7 +19,25 @@
     <main>
         <H1>Web and UI Resource Library</H1>
         <div id="publicLibrary"></div>
-    </main>
+        
+        <button id="newBook">Add a Book</button>
+
+        <form action="dialog" method="get" class="getNewBook bookCover">
+            <label for="title">Book Title
+                <input type="text" name="title" id="title"/></label>
+            <label for="author">Author
+                <input type="text" name="author" id="author"/></label>
+                <label for="topic">Topic
+                <input type="text" name="topic" id="topic"/></label>
+            <label for="format">Format
+                <input type="text" name="format" id="format"/></label>
+            <label for="pages">Pages
+                <input type="number" name="pages" id="pages"/></label>
+            <label for="didRead">Did you read it?
+                <input type="checkbox" name="author" id="author"/></label>
+            
+        </form>
+  </main>
     <footer>
   By Yessi Kenney &hearts; 2026
     </footer>
