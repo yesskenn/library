@@ -2,6 +2,7 @@
 
 const library = [];
 
+
 function Book(title, author, topic, format, pages, didRead) {
 
 
@@ -31,8 +32,8 @@ const book4 = new Book("UI Design Systems Mastery", "Marina Budarina", "UI desig
 const book5 = new Book("The Design Manual", "Adrian Kuleszo", "best practices and UI skills for modern app design", "digital", 770, false);
 const book6 = new Book("Ultimate Guide to Web Design", "Adrian Kuleszo", "web design process for freelancers", "digital", 340, false);
 
-
 library.push(book1, book2, book3, book4, book5, book6);
+
 
 
 
@@ -42,6 +43,42 @@ const shelf = document.createElement('div');
 shelf.className = 'shelf';
 publicLibrary.appendChild(shelf);
 
+
+
+
+
+
+
+    
+let bookForm = document.querySelector('#bookForm');
+
+
+const addNewBook = document.querySelector('#newBook-btn');
+addNewBook.addEventListener("click", () => {
+    bookForm.style.display = "flex";
+    shelf.appendChild(bookForm);
+    
+    
+})
+const submitBtn = document.querySelector('#submit-btn');
+const form = document.querySelector('#form');
+submitBtn.addEventListener("click", function(e){
+    e.preventDefault();
+
+
+    
+     const newBook = new Book(
+        this.title = document.getElementById('title').value,
+        this.author = document.getElementById('author').value,
+        this.topic = document.getElementById('topic').value,
+        this.format = document.getElementById('format').value,
+        this.pages = document.getElementById('pages').value,
+        this.didRead = document.getElementById('didRead').value
+
+    )
+    console.log(newBook);
+    library.push(newBook);
+});
 
 function addBookInfo(){
 
@@ -76,7 +113,6 @@ function addBookInfo(){
         
         shelf.appendChild(bookCover);
         bookCover.appendChild(bookInfo);
-
         
 
         bookTitle.textContent=library[i].title;
@@ -85,7 +121,7 @@ function addBookInfo(){
         bookFormat.textContent=library[i].format;
         bookPages.textContent=library[i].pages;
         bookInfo.append(bookTitle, bookAuthor, bookTopic, bookFormat, bookPages, didRead);
-
+    
     let readTag = document.createElement('div');
     readTag.className = ('readBook-label');
 
@@ -93,56 +129,13 @@ function addBookInfo(){
     if (library[i].didRead === true ) {
             
                 bookCover.style.backgroundColor = "#fb91ff6d";
-                //bookCover.appendChild(readTag);
+                bookCover.appendChild(readTag);
                 
 
                 
         }
 
+} 
 }
-}
-
 
 addBookInfo();
-
-const submitBtn = document.querySelector('#submit-btn');
-submitBtn.addEventListener("click", () => {
-    
-    
-    let newBook = new Book(
-        document.getElementById('title').value,
-        document.getElementById('author').value,
-        document.getElementById('topic').value,
-        document.getElementById('format').value,
-        document.getElementById('pages').value,
-        document.getElementById('didRead').value
-    
-
-    )});
-library.push(newBook);
-
-//const newBook = document.querySelector('.getNewBook')
-/*
-function addBookToLibrary(){
-   const inputBook = new Book(
-    this.name = function(){
-        return prompt("new book alert?")
-    }
-   )
-    
-    library.push(inputBook)
-    
-   
-
-}
-    */
-let bookForm = document.querySelector('#bookForm');
-
-
-const addNewBook = document.querySelector('#newBook-btn');
-addNewBook.addEventListener("click", () => {
-    bookForm.style.display = "flex";
-    shelf.appendChild(bookForm);
-    
-    
-})
