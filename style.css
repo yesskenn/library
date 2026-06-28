@@ -71,6 +71,8 @@ body {
   display: grid;
   min-height: 100%;
   grid-template-rows: auto 1fr auto;
+  margin: 0 auto;
+  padding: 1em;
 }
 
 footer {
@@ -82,10 +84,10 @@ footer {
   border: solid 1px black;
   padding: 10px;
   border-radius: 0.6em;
+  position: relative;
 }
 
 .getNewBook {
-  max-width: 400px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -98,12 +100,20 @@ footer {
 }
 
 .readBook-label {
-
-  color: rgb(76, 50, 205);
-  position: absolute;
-  bottom: 40px;
-  right: 10px;
-  width: 50px;
+  font-weight: 700;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  padding: 1px;
+  color: #fff;
+  background-color: rgb(139, 25, 116);
+  border: solid 1px rgb(76, 50, 205);
+  width: 66px;
+  height: 30px;
+  position: absolute; 
+  bottom: 0;
+  right: 0;
+  
   
 
 }

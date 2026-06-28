@@ -1,6 +1,7 @@
 
 
-const library = [];
+let library = [];
+let newBook;
 
 
 function Book(title, author, topic, format, pages, didRead) {
@@ -32,8 +33,8 @@ const book4 = new Book("UI Design Systems Mastery", "Marina Budarina", "UI desig
 const book5 = new Book("The Design Manual", "Adrian Kuleszo", "best practices and UI skills for modern app design", "digital", 770, false);
 const book6 = new Book("Ultimate Guide to Web Design", "Adrian Kuleszo", "web design process for freelancers", "digital", 340, false);
 
-library.push(book1, book2, book3, book4, book5, book6);
 
+library.push(book1, book2, book3, book4, book5, book6);
 
 
 
@@ -43,47 +44,11 @@ const shelf = document.createElement('div');
 shelf.className = 'shelf';
 publicLibrary.appendChild(shelf);
 
-
-
-
-
-
-
-    
-let bookForm = document.querySelector('#bookForm');
-
-
-const addNewBook = document.querySelector('#newBook-btn');
-addNewBook.addEventListener("click", () => {
-    bookForm.style.display = "flex";
-    shelf.appendChild(bookForm);
-    
-    
-})
-const submitBtn = document.querySelector('#submit-btn');
-const form = document.querySelector('#form');
-submitBtn.addEventListener("click", function(e){
-    e.preventDefault();
-
-
-    
-     const newBook = new Book(
-        this.title = document.getElementById('title').value,
-        this.author = document.getElementById('author').value,
-        this.topic = document.getElementById('topic').value,
-        this.format = document.getElementById('format').value,
-        this.pages = document.getElementById('pages').value,
-        this.didRead = document.getElementById('didRead').value
-
-    )
-    console.log(newBook);
-    library.push(newBook);
-});
-
+function createNewBook(){}
 function addBookInfo(){
-
-
-    for(let i=0;i < library.length;i++){
+shelf.innerHTML = "";
+    //for(let i=0;i < library.length;i++){
+    library.forEach(bookie => {
 
         let bookCover = document.createElement('div');
         bookCover.className = 'bookCover';
@@ -115,27 +80,63 @@ function addBookInfo(){
         bookCover.appendChild(bookInfo);
         
 
-        bookTitle.textContent=library[i].title;
-        bookAuthor.textContent=library[i].author;
-        bookTopic.textContent=library[i].topic;
-        bookFormat.textContent=library[i].format;
-        bookPages.textContent=library[i].pages;
+        bookTitle.textContent = bookie.title;
+        bookAuthor.textContent = bookie.author;
+        bookTopic.textContent = bookie.topic;
+        bookFormat.textContent = bookie.format;
+        bookPages.textContent = bookie.pages;
+
         bookInfo.append(bookTitle, bookAuthor, bookTopic, bookFormat, bookPages, didRead);
     
-    let readTag = document.createElement('div');
-    readTag.className = ('readBook-label');
+        let readTag = document.createElement('div');
+        readTag.className = ('readBook-label');
 
 
-    if (library[i].didRead === true ) {
-            
+        if (bookie.didRead) {
+
                 bookCover.style.backgroundColor = "#fb91ff6d";
-                bookCover.appendChild(readTag);
-                
+                bookCover.appendChild(readTag); 
+                readTag.innerText = "READ"
 
-                
-        }
+        }})
+    };
 
-} 
-}
 
 addBookInfo();
+
+let bookForm = document.querySelector('#bookForm');
+
+
+const newBookBtn = document.querySelector('#newBook-btn');
+newBookBtn.addEventListener("click", () => {
+    bookForm.style.display = "flex";
+    shelf.appendChild(bookForm);
+    newBookBtn.style.display = "none";
+    
+    
+})
+const submitBtn = document.querySelector('#submit-btn');
+const form = document.querySelector('#frm');
+submitBtn.addEventListener("click", function(e){
+    e.preventDefault();
+
+   
+      newBook = new Book(
+        this.title = document.getElementById('title').value,
+        this.author = document.getElementById('author').value,
+        this.topic = document.getElementById('topic').value,
+        this.format = document.getElementById('format').value,
+        this.pages = document.getElementById('pages').value,
+        this.pages = document.getElementById('didRead').checked
+
+    )
+    library.push(newBook);
+    addBookInfo(newBook);
+   form.reset();
+    
+
+
+})
+
+newBookBtn.style.display = "block";;
+
