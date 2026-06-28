@@ -37,7 +37,6 @@ const book6 = new Book("Ultimate Guide to Web Design", "Adrian Kuleszo", "web de
 library.push(book1, book2, book3, book4, book5, book6);
 
 
-
     
 const publicLibrary = document.getElementById('publicLibrary')
 const shelf = document.createElement('div');
@@ -50,8 +49,13 @@ shelf.innerHTML = "";
     //for(let i=0;i < library.length;i++){
     library.forEach(bookie => {
 
+        bookie.id = crypto.randomUUID();
+       
+
         let bookCover = document.createElement('div');
         bookCover.className = 'bookCover';
+        bookCover.dataset.id = bookie.id;
+
 
         let bookInfo = document.createElement('div');
         bookInfo.className = "bookInfo";   
