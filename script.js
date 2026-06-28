@@ -108,18 +108,20 @@ let bookForm = document.querySelector('#bookForm');
 
 
 const newBookBtn = document.querySelector('#newBook-btn');
+
+
 newBookBtn.addEventListener("click", () => {
     bookForm.style.display = "flex";
     shelf.appendChild(bookForm);
-    newBookBtn.style.display = "none";
+    document.getElementById('frm').reset();
     
     
 })
 const submitBtn = document.querySelector('#submit-btn');
-const form = document.querySelector('#frm');
+//const form = document.getElementById('frm');
+
 submitBtn.addEventListener("click", function(e){
     e.preventDefault();
-
    
       newBook = new Book(
         this.title = document.getElementById('title').value,
@@ -132,11 +134,11 @@ submitBtn.addEventListener("click", function(e){
     )
     library.push(newBook);
     addBookInfo(newBook);
-   form.reset();
     
-
+   
+    // document.getElementById('didRead').checked
 
 })
 
-newBookBtn.style.display = "block";;
+
 
