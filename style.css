@@ -83,10 +83,34 @@ footer {
 .bookCover {
   border: solid 1px black;
   padding: 10px;
-  border-radius: 0.6em;
+  border-radius: 0.5em;
   position: relative;
+  display: grid; 
+  grid-template-rows: repeat(3, auto);
+  gap: 0.1em;
 }
 
+
+.bookTitle{
+  margin: 0.1em auto;
+ line-height: 1.1;
+ font-family: "Montserrat";
+ font-size: 1.65em;
+}
+
+.bookAuthor {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.bookTopic{
+  border: solid 1px #000;
+}
+
+.bookFormat {
+  font-style: italic;
+  text-decoration: underline;
+}
 .getNewBook {
   display: flex;
   flex-direction: column;
@@ -99,24 +123,42 @@ footer {
   gap: 10px;
 }
 
-.readBook-label {
+.readBook-tag {
   font-weight: 700;
   justify-items: center;
   justify-content: center;
   align-content: center;
   padding: 1px;
   color: #fff;
-  background-color: rgb(139, 25, 116);
+  background-color: rgb(98, 87, 151);
   border: solid 1px rgb(76, 50, 205);
+  border-radius: 0.3em;
   width: 66px;
   height: 30px;
   position: absolute; 
   bottom: 0;
+  left: 0;
+}
+
+.readBook-label{
+  text-align: center;
+}
+
+.deleteBtn{
+  position: absolute;
+  top: 0;
   right: 0;
-  
-  
+}
+input[type="checkbox"] {
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.10em solid rgb(143, 60, 143);
+  border-radius: 0.10em;
+  transform: translateY(-0.075em);
 
 }
+
+
 
 #bookForm {
   display:none;

@@ -85,6 +85,9 @@ shelf.innerHTML = "";
         readBtn.type = "checkbox";
         readBtn.className = "readBtn";
         
+
+        
+        
         shelf.appendChild(bookCover);
         bookCover.appendChild(bookInfo);
         
@@ -98,12 +101,17 @@ shelf.innerHTML = "";
         bookInfo.append(bookTitle, bookAuthor, bookTopic, bookFormat, bookPages, didRead, readBtn);
     
         let readTag = document.createElement('div');
-        readTag.className = ('readBook-label');
-        readTag.innerText = "READ";
+        readTag.className = ('readBook-tag');
+
+        let readLabel = document.createElement('p');
+        readLabel.className = ('readBook-label');
+        readLabel.textContent = "READ";
+
+        readTag.appendChild(readLabel);
         
         let deleteBtn = document.createElement('button');
         deleteBtn.className = 'deleteBtn';
-        deleteBtn.innerText = "DELETE ITTT";
+        deleteBtn.innerText = "DELETE";
         bookCover.appendChild(deleteBtn);
 
         deleteBtn.addEventListener("click", function(){
@@ -124,9 +132,8 @@ shelf.innerHTML = "";
                 bookCover.appendChild(readTag); 
                 bookCover.appendChild(readBtn);
             } else {
-                bookCover.style.backgroundColor = "#fff";
+                bookCover.style.backgroundColor = "#ffffff00";
                 bookCover.removeChild(readTag); 
-                readTag.appendChild(readBtn);
             }
         })
 
