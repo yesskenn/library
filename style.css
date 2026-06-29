@@ -86,16 +86,19 @@ footer {
   border-radius: 0.5em;
   position: relative;
   display: grid; 
-  grid-template-rows: repeat(3, auto);
-  gap: 0.1em;
+  grid-template-rows: repeat(minmax(1em, auto));
+  gap: 0.15em;
+
+
 }
 
 
 .bookTitle{
-  margin: 0.1em auto;
+  margin: 1em 0.15em auto auto;
  line-height: 1.1;
  font-family: "Montserrat";
  font-size: 1.65em;
+ 
 }
 
 .bookAuthor {
@@ -133,11 +136,11 @@ footer {
   background-color: rgb(98, 87, 151);
   border: solid 1px rgb(76, 50, 205);
   border-radius: 0.3em;
-  width: 66px;
+  width: 33%;
   height: 30px;
   position: absolute; 
   bottom: 0;
-  left: 0;
+  right: 0;
 }
 
 .readBook-label{
@@ -145,6 +148,7 @@ footer {
 }
 
 .deleteBtn{
+  margin: 0.35em;
   position: absolute;
   top: 0;
   right: 0;

@@ -98,11 +98,16 @@ shelf.innerHTML = "";
         bookFormat.textContent = bookie.format;
         bookPages.textContent = bookie.pages;
 
-        bookInfo.append(bookTitle, bookAuthor, bookTopic, bookFormat, bookPages, didRead, readBtn);
+        bookInfo.append(bookTitle, bookAuthor, bookTopic, bookFormat, bookPages, didRead);
     
         let readTag = document.createElement('div');
         readTag.className = ('readBook-tag');
 
+
+        let readCheck = document.createElement('div');
+            readCheck.className = ("readCheck");
+        readCheck.appendChild(readBtn);
+        bookCover.appendChild(readCheck);
         let readLabel = document.createElement('p');
         readLabel.className = ('readBook-label');
         readLabel.textContent = "READ";
