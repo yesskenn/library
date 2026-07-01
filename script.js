@@ -137,7 +137,7 @@ shelf.innerHTML = "";
 
         readBtn.addEventListener('change', function(){
             if (this.checked){
-                bookCover.style.backgroundColor = "#fb91ff6d";
+                bookCover.style.backgroundColor = "#91a0ff58";
                 bookCover.appendChild(readTag); 
                 bookCover.appendChild(readBtn);
             } else {
@@ -148,7 +148,7 @@ shelf.innerHTML = "";
 
         if (bookie.didRead) {
 
-                bookCover.style.backgroundColor = "#fb91ff6d";
+                bookCover.style.backgroundColor = "#91a0ff58";
                 bookCover.appendChild(readTag); 
                 readTag.appendChild(readBtn);
                 bookCover.appendChild(readBtn);

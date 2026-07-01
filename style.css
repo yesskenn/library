@@ -196,7 +196,7 @@ footer {
   align-content: center;
   padding: 1px;
   color: #fff;
-  background-color: rgb(98, 87, 151);
+  background-color: rgb(87, 121, 151);
   border: solid 1px rgb(76, 50, 205);
   border-radius: 0.3em;
   width: 33%;
@@ -219,7 +219,7 @@ footer {
 input[type="checkbox"] {
   width: 1.15em;
   height: 1.15em;
-  border: 0.10em solid rgb(143, 60, 143);
+  border: 0.10em solid rgb(60, 85, 143);
   border-radius: 0.10em;
   transform: translateY(-0.075em);
 

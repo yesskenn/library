@@ -18,5 +18,5 @@ A lightweight web app for organizing UX and web development -related reading res
 
 ## Live Demo
 
-[https://yessikenney.com/resource-shelf](https://yessikenney.com/resource-shelf)
+[https://yessikenney.com/reading-shelf](https://yessikenney.com/reading-shelf)
 
